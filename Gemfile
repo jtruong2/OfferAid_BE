@@ -26,6 +26,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'simplecov'
   gem 'awesome_print'
+  gem 'simplecov'
 end
 
 group :development do
