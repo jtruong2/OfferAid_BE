@@ -1,4 +1,4 @@
-class Api::V1::User::UserController < ApplicationController
+class Api::V1::UserController < ApplicationController
   def show
     render json: User.find(params[:id])
   end
@@ -10,6 +10,11 @@ class Api::V1::User::UserController < ApplicationController
     else
       render file: 'public/500.html'
     end
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.update_attributes!(safe_params)
   end
 
   private

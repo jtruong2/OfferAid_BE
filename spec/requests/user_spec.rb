@@ -46,4 +46,15 @@ RSpec.describe "User API" do
       expect(User.count).to eq(0)
     end
   end
+
+  context "PATCH /api/v1/user/:id" do
+    it "updates user information" do
+      user = create(:user)
+      params = { user: {first_name: "New Name"}}
+
+      patch "/api/v1/user/#{user.id}", params: params
+
+      expect(User.first.first_name).to eq("New Name")
+    end
+  end
 end
