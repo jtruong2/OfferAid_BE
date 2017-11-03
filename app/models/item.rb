@@ -7,4 +7,8 @@ class Item < ApplicationRecord
       item.name = params["name"]
     end
   end
+
+  def self.sorted_items
+    order(:name)
+  end
 end
