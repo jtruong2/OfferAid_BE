@@ -12,6 +12,7 @@ class Api::V1::DonationsController < ApplicationController
                      pickup_date: safe_params[:pickup_date],
                      pickup_address: safe_params[:pickup_address])
     DonationItem.create_association(donation.id, safe_params[:items])
+    render json: donation
   end
 
   private
