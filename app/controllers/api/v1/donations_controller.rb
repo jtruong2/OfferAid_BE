@@ -22,6 +22,6 @@ class Api::V1::DonationsController < ApplicationController
   private
 
   def safe_params
-    params.require(:donation).permit(:user_id, :email, :pickup_date, :pickup_address, :items)
+    params.permit(:user_id, :email, :pickup_date, :pickup_address, :items)
   end
 end

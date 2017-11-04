@@ -37,15 +37,18 @@ RSpec.describe "Donation" do
     end
   end
 
-  # context "POST /api/v1/user/:user_id/donations/" do
-  #   it "creates a new donation" do
-  # 
-  #     params = { donation: {  }}
-  #
-  #     post "/api/v1/user/#{@user.id}/donations", params
-  #
-  #     expect(response).to be_success
-  #     expect(@user.donations.count).to eq(3)
-  #   end
-  # end
+  context "POST /api/v1/user/:user_id/donations/" do
+    it "creates a new donation" do
+      donation = build(:donation)
+      items = create_list(:item, 3)
+
+
+      params = { donation: { user_id: @user.id, email: @user.email, pickup_date: donation.pickup_date, pickup_address: donation.pickup_address, items: items }}
+
+      post "/api/v1/user/#{@user.id}/donations", params: params
+
+      expect(response).to be_success
+      expect(@user.donations.count).to eq(3)
+    end
+  end
 end
