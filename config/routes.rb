@@ -7,7 +7,9 @@ Rails.application.routes.draw do
         get "/donations", to: 'donations#index'
         get "/donations/:donation_id/items", to: 'items#index'
         post "/donations/:donation_id/items", to: 'items#create'
+        post "/donations", to: 'donations#create'
       end
+
       get '/items', to: 'all_items#index'
       post "/login", to: 'sessions#create'
       delete "/logout", to: 'sessions#destroy'

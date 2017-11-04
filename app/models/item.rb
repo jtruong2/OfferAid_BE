@@ -2,13 +2,12 @@ class Item < ApplicationRecord
   has_many :donation_items
   has_many :donations, through: :donation_items
 
-  def self.find_or_create(params)
-    find_or_create_by(name: params["name"]) do |item|
-      item.name = params["name"]
-    end
-  end
-
   def self.sorted_items
     order(:name)
+  end
+
+  def self.find_item_ids(items)
+    item_names = items.map { |item| item.item }
+    where(name: item_names)
   end
 end
