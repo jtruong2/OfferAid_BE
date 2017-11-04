@@ -5,6 +5,7 @@ class Donation < ApplicationRecord
   has_many :donation_items
   has_many :items, through: :donation_items
   validates_presence_of :confirmation
+  accepts_nested_attributes_for :items
 
   before_validation :generate_confirmation
 
