@@ -11,7 +11,11 @@ class Api::V1::DonationsController < ApplicationController
     donation = Donation.create!(user_id: safe_params[:user_id],
                      pickup_date: safe_params[:pickup_date],
                      pickup_address: safe_params[:pickup_address])
-    DonationItem.create_association(donation, items)
+    DonationItem.create_association(donation.id, safe_params[:items])
+    if donation.save
+      render json: donation.confirmation
+    else
+      render json: {status: "Error"}
   end
 
   private
