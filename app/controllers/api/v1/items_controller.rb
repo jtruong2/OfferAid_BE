@@ -4,6 +4,12 @@ class Api::V1::ItemsController < ApplicationController
     render json: donation.items
   end
 
+  def show
+    user = User.find(params[:user_id])
+    count = DonationItem.get_count(user)
+    render json: {count: count}
+  end
+
   private
 
   def safe_params

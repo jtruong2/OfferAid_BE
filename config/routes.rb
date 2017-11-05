@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         get "/donations/:donation_id/items", to: 'items#index'
         post "/donations/:donation_id/items", to: 'items#create'
         post "/donations", to: 'donations#create'
+        get "/items", to: 'items#show'
       end
 
       get '/items', to: 'all_items#index'

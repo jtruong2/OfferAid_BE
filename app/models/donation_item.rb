@@ -8,4 +8,8 @@ class DonationItem < ApplicationRecord
       create!(donation_id: donation_id, item_id: item['id'], quantity: item['quantity'])
     end
   end
+
+  def self.get_count(user)
+    user.donation_items.pluck(:quantity).reduce(:+)
+  end
 end

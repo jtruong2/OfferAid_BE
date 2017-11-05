@@ -3,6 +3,6 @@ items.map { |item| Item.create!(name: item)}
 
 puts 'Items added'
 
-User.create(first_name: 'Jimmy', last_name: 'Truong', street_address: '123 Main Street', city: 'Denver', state: 'CO', zip_code: '80202', email: 'jtruong2@comcast.net', password: 'password')
-User.create(first_name: 'default', last_name: 'default', street_address: '123 Main Street', city: 'Denver', state: 'CO', zip_code: '80202', email: '123', password: '123')
+User.create!(first_name: 'Jimmy', last_name: 'Truong', street_address: '123 Main Street', city: 'Denver', state: 'CO', zip_code: '80202', email: 'jtruong2@comcast.net', password: 'password')
+User.create!(first_name: 'default', last_name: 'default', street_address: '123 Main Street', city: 'Denver', state: 'CO', zip_code: '80202', email: '123', password: '123')
  puts 'Users added'
