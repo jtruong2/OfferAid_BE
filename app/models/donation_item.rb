@@ -12,4 +12,5 @@ class DonationItem < ApplicationRecord
   def self.get_count(user)
     user.donation_items.pluck(:quantity).reduce(:+)
   end
+
 end
