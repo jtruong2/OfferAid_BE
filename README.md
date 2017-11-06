@@ -1,24 +1,30 @@
-# README
+# OfferAid Back-End (MOD 4 Capstone Project for Turing School)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+OfferAid is a charitable contributions iOS app designed to help users all across America donate items without leaving their home.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+```
+git clone
+bundle install
 
-* System dependencies
+```
+### Prerequisites
 
-* Configuration
+```
+rake db:create de:migrate db:seed
+run rails s to start server
+```
 
-* Database creation
+## Deployment
 
-* Database initialization
+The backend is deployed on heorku which you can find here:
 
-* How to run the test suite
+```
+APP: offeraidbackend.herokuapp.com/
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Built With
 
-* Deployment instructions
+React Native Frontend and Ruby on Rails Backend
 
-* ...
