@@ -1,8 +1,7 @@
 class Api::V1::ItemsController < ApplicationController
   def index
-    donation = DonationItem.find(params[:donation_id])
-    itemsID =  donation.donation_items, include: ['item']
-
+    donation = Donation.find(params[:donation_id])
+    render json: donation.items
   end
 
   def show
