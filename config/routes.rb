@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         post "/donations/:donation_id/items", to: 'items#create'
         post "/donations", to: 'donations#create'
         get "/items", to: 'items#show'
+        post "/alexa_donations", to: 'alexa_donations#create'
       end
 
       get '/items', to: 'all_items#index'
