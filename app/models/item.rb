@@ -16,7 +16,7 @@ class Item < ApplicationRecord
     items_with_quantity = items.split(' ').each_slice(2).to_a
     items_with_quantity.map do |item|
       item_obj = {}
-      item_obj['id'] = Item.find_by(name: item[1]).id
+      item_obj['id'] = Item.find_by(name: item[1].capitalize).id
       item_obj['quantity'] = item[0].to_i
       item_obj['name'] = item[1]
       items_as_obj.push(item_obj)

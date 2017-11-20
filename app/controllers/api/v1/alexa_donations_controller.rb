@@ -6,7 +6,7 @@ class Api::V1::AlexaDonationsController < ApplicationController
       pickup_date: safe_params[:pickup_date],
       pickup_address: safe_params[:pickup_address]
     )
-    a = DonationItem.create_association(donation.id, items)
+    DonationItem.create_association(donation.id, items)
   end
 
   private
