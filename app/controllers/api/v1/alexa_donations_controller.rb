@@ -1,5 +1,6 @@
 class Api::V1::AlexaDonationsController < ApplicationController
   def create
+    byebug
     items = Item.convert_from_voice(safe_params[:items])
     donation = Donation.create!(
       user_id: safe_params[:user_id],
@@ -12,6 +13,6 @@ class Api::V1::AlexaDonationsController < ApplicationController
   private
 
   def safe_params
-    params.permit(:items, :pickup_date, :pickup_address, :user_id)
+    params.permit(:items, :quantity, :pickup_date, :pickup_address, :user_id)
   end
 end
