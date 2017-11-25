@@ -7,6 +7,7 @@ class Api::V1::AlexaDonationsController < ApplicationController
       pickup_address: safe_params[:pickup_address]
     )
     DonationItem.create_association(donation.id, items)
+    render json: donation
   end
 
   private
