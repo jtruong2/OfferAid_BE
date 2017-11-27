@@ -1,7 +1,7 @@
 class DonationItemSerializer < ActiveModel::Serializer
-  attributes :quantity, :name
+  attributes :quantity, :item
 
-  def name
+  def item
     Item.find(object.id)
   end
 end
