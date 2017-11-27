@@ -4,7 +4,7 @@ class Api::V1::DonationsController < ApplicationController
   end
 
   def index
-    render json: Donation.where(user_id: params[:user_id])
+    render json: Donation.where(user_id: params[:user_id]).order(created_at: :desc)
   end
 
   def create
